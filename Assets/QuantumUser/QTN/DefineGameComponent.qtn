@@ -1,0 +1,180 @@
+input
+{
+	FPVector2 Direction;
+	button Attack;
+	button SpawnBullet;
+	button Eat;
+}
+
+component PlayerInfo{
+	player_ref PlayerRef;
+	FP Damage;
+	FP Health;
+	FP CurrentHealth;
+	FP Speed;
+	FP QuantityHP;
+	asset_ref<EntityPrototype> Bullet;
+	PlayerFacing Facing;
+
+	FP LV;
+	asset_ref<EntityPrototype> Skill1;
+	asset_ref<EntityPrototype> Skill2;
+	asset_ref<EntityPrototype> Skill3;
+	asset_ref<EntityPrototype> Skill4;
+	asset_ref<EntityPrototype> Skill5;
+	asset_ref<EntityPrototype> Skill6;
+}
+
+component BulletInfo{
+	FPVector2 Direction;
+	FP Damage;
+	EntityRef Owner;
+	PlayerFacing Facing;
+	FP Speed;
+	FP ExistTime;
+}
+
+component PlayerSkill1Info{
+	FPVector2 Direction;
+	FP Damage;
+	EntityRef Owner;
+	PlayerFacing Facing;
+	FP Speed;
+	FP ExistTime;
+}
+
+component PlayerSkill2Info{
+	FPVector2 Direction;
+	FP Damage;
+	EntityRef Owner;
+	PlayerFacing Facing;
+	FP Speed;
+	FP ExistTime;
+}
+
+component PlayerSkill3Info{
+	FPVector2 Direction;
+	FP Damage;
+	EntityRef Owner;
+	PlayerFacing Facing;
+	FP Speed;
+	FP ExistTime;
+}
+
+component PlayerSkill4Info{
+	FPVector2 Direction;
+	FP Damage;
+	EntityRef Owner;
+	PlayerFacing Facing;
+	FP Speed;
+	FP ExistTime;
+}
+
+component PlayerSkill5Info{
+	FPVector2 Direction;
+	FP Damage;
+	EntityRef Owner;
+	PlayerFacing Facing;
+	FP Speed;
+	FP ExistTime;
+}
+
+component PlayerSkill6Info{
+	FPVector2 Direction;
+	FP Damage;
+	EntityRef Owner;
+	PlayerFacing Facing;
+	FP Speed;
+	FP ExistTime;
+}
+
+
+component GifInfo{
+	FP HP;
+	FP Damage;
+	FP Speed;
+	FP Exp;
+}
+
+enum PlayerFacing 
+{
+    Left,
+    Right
+}
+
+component BossRInfo{
+	FP Time;
+	FP ChangeDirectionTime;
+	FP UseSkillTime1;
+	FP UseSkillTime2;
+	FP UseSkillTime3;
+	FP UseSkillTime4;
+	FPVector2 Direction;
+	FP Health;
+	FP CurrentHealth;
+
+	asset_ref<EntityPrototype> Skill1;
+	asset_ref<EntityPrototype> Skill2;
+	asset_ref<EntityPrototype> Gif;
+
+	FP IsAttacking;
+}
+
+component BossRBulletInfo{
+	FP Speed;
+	FP Damege;
+	FPVector2 Direction;
+	EntityRef Owner;
+	FP ExistTime;
+}
+
+
+component BossInfo{
+	FP Time;
+	FP ChangeDirectionTime;
+	FP UseSkillTime1;
+	FP UseSkillTime2;
+	FP UseSkillTime3;
+	FP UseSkillTime4;
+	FPVector2 Direction;
+	FP Health;
+	FP CurrentHealth;
+	asset_ref<EntityPrototype> Bullet;
+	asset_ref<EntityPrototype> Gif;
+}
+
+component BossBulletInfo{
+	FP Speed;
+	FP Damage;
+	FPVector2 Direction;
+	EntityRef Owner;
+	FP ExistTime;
+}
+
+enum GameState{
+	Playing, Win, Lose
+}
+
+global{
+	GameState CurrentGameState;
+}
+
+signal OnPlayerDead();
+signal OnBossDead();
+
+component HealthIfno{
+	FP Health;
+	FP Quantity;
+}
+
+component EnemyInfo{
+	FP Time;
+	FP Damage;
+	FP ChangeDirectionTime;
+	FP UseSkillTime1;
+	FPVector2 Direction;
+	FP Health;
+	FP CurrentHealth;
+	asset_ref<EntityPrototype> Bullet;
+	asset_ref<EntityPrototype> Gif;
+}
